@@ -4,7 +4,8 @@
 # in same directory
 cp .clang_complete .ccls
 
-# add clang to the beginning of the file
+# add text "clang" to the beginning of the file
+# so that ccls will recognize it as a compile_commands file
 echo "$(echo 'clang' | cat - .ccls)" > .ccls
 
 # Done!

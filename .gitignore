@@ -5,3 +5,4 @@
 .ccls
 .clang_complete
 TAGS
+99-platformio-udev.rules*

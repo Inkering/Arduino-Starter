@@ -10,21 +10,25 @@ conda create -n arduino python=2.7 pip
 conda activate arduino
 ```
 ### Platformio
-
+During install we need to update udev rules so uploading can occur.  
 ``` shell
 pip install -U platformio
+wget https://raw.githubusercontent.com/platformio/platformio-core/develop/scripts/99-platformio-udev.rules
+sudo cp 99-platformio-udev.rules /etc/udev/rules.d/99-platformio-udev.rules
+sudo service udev restart
 platformio init
 ```  
 for an Arduino Uno:
 
 ``` shell
 platformio init --board uno
+platformio init --board uno --ide emacs
 ```
 ### for emacs ccls + lsp setup
 
 Make the clang_complete file ready for ccls  
 ``` shell
-platformio init --ide
+platformio init --ide emacs
 ./ccls-reg.sh
 ```  
 In the future we can hook this into platform IO's run command or something like that. I will also add details on the emacs config which allows for vs-code level intellisense!
@@ -59,6 +63,6 @@ platformio device monitor
 To regen flags:  
 
 ``` shell
-platformio init --ide
+platformio init --ide emacs
 ./ccls-reg.sh
 ```

@@ -27,7 +27,7 @@ Make the clang_complete file ready for ccls
 platformio init --ide
 ./ccls-reg.sh
 ```  
-In the future we can hook this into platform IO's run command or something like that.
+In the future we can hook this into platform IO's run command or something like that. I will also add details on the emacs config which allows for vs-code level intellisense!
 ### all in one
 
 ``` shell

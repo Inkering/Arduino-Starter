@@ -125,3 +125,13 @@ To regen flags for emacs:
 platformio init --ide emacs
 ./ccls-reg.sh
 ```
+  
+In order to install libraries, you have some options. Just like a normal c++
+project, you can download a set of header/cpp files and place them in, for
+example, the library folder. Another option presented by the platform io tool is
+their Library Dependency Finder, which automagically looks at any `#include`
+statements in your code and downloads matching dependencies. More details at:
+<https://docs.platformio.org/en/latest/librarymanager/ldf.html>. This project
+includes an example import of the neopixels library served through platformio's
+LDF tool. I don't specify that it should be imported anywhere besides the main
+cpp file where I import it at the moment I use it. Magic!

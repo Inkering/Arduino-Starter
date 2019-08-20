@@ -1,18 +1,25 @@
 # Arduino-Starter
-Boilerplate for an arduino project. I don't particularly like the Arduino-ide, so I went searching for alternative options. Platform-io is the powerhouse here, it allows for uploading,building, and library management of programs for arduinos(and other boards!). I personally use emacs quite a bit, so this repo will be slightly biased towards that, with some helper scripts and config snippets to increase ease of use in emacs (auto-completion, compilation bindings, etc).
+Boilerplate for an arduino project. I don't particularly like the Arduino-ide,
+so I went searching for alternative options. Platform-io is the powerhouse here,
+it allows for uploading,building, and library management of programs for
+arduinos(and other boards!). I personally use emacs quite a bit, so this repo
+will be slightly biased towards that, with some helper scripts and config
+snippets to increase ease of use in emacs (auto-completion, compilation
+bindings, etc).
 
 ## Setup
 
 ### Conda env
+Unfortunately pio requires python 2.
 
 ``` shell
 conda create -n arduino python=2.7 pip
 conda activate arduino
 ```
 ### Platformio
-During install we need to update udev rules so uploading can occur.  
+During install we may need to update udev rules so uploading can occur.  
 ``` shell
-pip install -U platformio
+pip install -r requirements.txt
 wget https://raw.githubusercontent.com/platformio/platformio-core/develop/scripts/99-platformio-udev.rules
 sudo cp 99-platformio-udev.rules /etc/udev/rules.d/99-platformio-udev.rules
 sudo service udev restart

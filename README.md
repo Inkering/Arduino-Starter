@@ -115,7 +115,7 @@ To clean:
 ``` shell
 pio run --target clean
 ```  
-To see serial:  
+To see serial(note that uploading a program will not succeed with a serial monitor also open):  
 ``` shell
 platformio device monitor
 ```  
